@@ -146,3 +146,34 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+alias gcom='git checkout master'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gbb='git branches'
+alias gs='git status'
+alias gadd='git add -ip'
+alias grim='git rebase -i master'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+alias gmt='git mergetool'
+alias gbackup='git branch backup/$(mybranch)'
+alias mybranch='git branch | grep '^*' | cut -c 3-'
+
+function gff {
+    local target="origin"
+    if git remotes | grep upstream > /dev/null; then
+        target="upstream"
+    fi;
+    git fetch "${target}"
+    git merge --ff-only "${target}/$(mybranch)"
+    git push -u origin "$(mybranch)"
+}
+
+function pushit {
+    git push -u origin "$(mybranch)"
+}
+
+function gco {
+    git checkout "$(git branch | grep -i "$1" | cut -c 3-)"
+}
