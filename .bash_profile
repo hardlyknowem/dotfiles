@@ -48,3 +48,8 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+if [ ! -d "/Applications/kdiff3.app/Contents/MacOS" ]; then
+    >&2 echo 'Did not find kdiff3; this will interfere '
+        'with the default for git mergetool.'
+fi

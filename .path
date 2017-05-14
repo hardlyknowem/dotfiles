@@ -2,4 +2,10 @@
 # Not sure if sbin needs to be before bin
 PATH="/usr/local/bin:${PATH}"
 PATH="/usr/local/sbin:${PATH}"
+
+# KDiff is our git mergetool
+if [ -d "/Applications/kdiff3.app/Contents/MacOS" ]; then
+    PATH="/Applications/kdiff3.app/Contents/MacOS:${PATH}"
+fi
+
 export PATH
