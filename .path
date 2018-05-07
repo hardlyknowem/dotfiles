@@ -8,4 +8,9 @@ if [ -d "/Applications/kdiff3.app/Contents/MacOS" ]; then
     PATH="/Applications/kdiff3.app/Contents/MacOS:${PATH}"
 fi
 
+# calibre tools
+if [ -d "/Applications/calibre.app/Contents/console.app/Contents/MacOS/" ]; then
+    PATH="/Applications/calibre.app/Contents/console.app/Contents/MacOS/:${PATH}"
+fi
+
 export PATH
