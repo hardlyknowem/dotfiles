@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-cd "$(dirname "${BASH_SOURCE}")";
+pushd "$(dirname "${BASH_SOURCE}")" > /dev/null;
 
 git pull origin master;
 
@@ -25,3 +24,4 @@ else
 	fi;
 fi;
 unset doIt;
+popd > /dev/null
