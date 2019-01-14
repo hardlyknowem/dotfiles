@@ -13,4 +13,8 @@ if [ -d "/Applications/calibre.app/Contents/console.app/Contents/MacOS/" ]; then
     PATH="/Applications/calibre.app/Contents/console.app/Contents/MacOS/:${PATH}"
 fi
 
+if [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
+	PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
+fi
+
 export PATH
