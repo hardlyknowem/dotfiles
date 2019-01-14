@@ -1,0 +1,7 @@
+--ignore-dir=node_modules
+--ignore-dir=bower_components
+--ignore-dir=.git
+--ignore-dir=.idea
+--ignore-dir=.sass-cache
+--ignore-dir=.tmp
+--ignore-file=ext:orig
