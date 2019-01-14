@@ -1,0 +1,12 @@
+#!/bin/bash
+# Copy a script to a temporary location, remove its Windows line endings,
+# runs it with the supplied arguments, and then deletes the temporary copy.
+scriptname="${1}"
+shift
+
+destination="$(mktemp /tmp/rundos.XXXXXXX)"
+undosify "${scriptname}" > "${destination}"
+chmod 755 "${destination}"
+
+"${destination}" "$@"
+rm "${destination}"
