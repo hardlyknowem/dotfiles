@@ -190,3 +190,38 @@ function pushit {
 function gco {
     git checkout "$(git branch | grep -i "$1" | cut -c 3-)"
 }
+
+function update-repo {
+    local CODE_DIR="${HOME}/code"
+    local REPO
+    local REPO_NAME
+    local REPO_DEST
+
+    if [ $# -ne 1 ]; then
+        >&2 echo "usage: init-repo repoUrl"
+        exit 2;
+    fi
+
+    REPO="$1"
+    shift;
+
+    REPO_NAME="${REPO##*/}"
+    REPO_NAME="${REPO_NAME%.git}"
+
+    REPO_DEST="${CODE_DIR}/${REPO_NAME}"
+
+    if [ ! -d "${CODE_DIR}" ]; then
+        mkdir "${CODE_DIR}"
+    fi
+
+    if [ ! -d "${REPO_DEST}" ]; then
+        git clone "${REPO}" "${REPO_DEST}"
+        echo "${DIR_NAME} installed; note that you must restart your shell to make the tools available"
+    else
+        (cd "${REPO_DEST}" && gff)
+    fi
+
+    if [ -f "${REPO_DEST}/brew.sh" ]; then
+        bash "${REPO_DEST}/brew.sh"
+    fi
+}
