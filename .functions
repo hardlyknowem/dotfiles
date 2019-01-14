@@ -169,3 +169,24 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Fetch the given upstream/origin, do a fast-forward merge, and push to origin
+function gff {
+    local target="origin"
+    if git remotes | grep upstream > /dev/null; then
+        target="upstream"
+    fi;
+    git fetch "${target}"
+    git merge --ff-only "${target}/$(mybranch)"
+    git push -u origin "$(mybranch)"
+}
+
+# Push the current branch to origin
+function pushit {
+    git push -u origin "$(mybranch)"
+}
+
+# Search for the given branch and check it out
+function gco {
+    git checkout "$(git branch | grep -i "$1" | cut -c 3-)"
+}
