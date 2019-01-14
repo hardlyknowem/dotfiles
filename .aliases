@@ -144,8 +144,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
 
+# Replaced by script in bin
 # Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
+#alias path='echo -e ${PATH//:/\\n}'
 
 # Convenient alias to the findit command
 alias f="findit.sh"

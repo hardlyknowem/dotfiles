@@ -1,0 +1,26 @@
+#!/bin/bash
+# Print out the current path
+
+sort=""
+
+while getopts "hs" opt; do
+	case "${opt}" in
+	h)
+		echo "Usage: $0 [-s]"
+		exit 0
+		;;
+	s)
+		sort="true"
+		;;
+	esac
+done
+
+main() {
+	oldifs=$IFS
+	IFS=:
+	printf "%s\n" $PATH
+	IFS=$oldifs
+
+}
+
+[ -n "${sort}" ] && main | sort -f || main
