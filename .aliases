@@ -148,6 +148,12 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 #alias path='echo -e ${PATH//:/\\n}'
 
+# Edit the dotfiles repo
+alias dotfiles="subl '${DOTFILES_LOCATION}'"
+
+# Re-run the dotfiles initialization
+alias renew_dotfiles="source '${DOTFILES_LOCATION}/bootstrap.sh'"
+
 # Convenient alias to the findit command
 alias f="findit.sh"
 
