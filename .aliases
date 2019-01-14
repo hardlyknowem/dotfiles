@@ -154,6 +154,9 @@ alias dotfiles="subl '${DOTFILES_LOCATION}'"
 # Re-run the dotfiles initialization
 alias renew_dotfiles="source '${DOTFILES_LOCATION}/bootstrap.sh'"
 
+# Remove Windows/DOS line endings from a file.
+alias undosify="tr -d '\015'"
+
 # Convenient alias to the findit command
 alias f="findit.sh"
 
