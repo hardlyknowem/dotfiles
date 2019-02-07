@@ -53,3 +53,6 @@ if [ ! -d "/Applications/kdiff3.app/Contents/MacOS" ]; then
     >&2 echo 'Did not find kdiff3; this will interfere '
         'with the default for git mergetool.'
 fi
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

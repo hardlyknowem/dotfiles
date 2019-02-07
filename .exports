@@ -35,3 +35,5 @@ export GPG_TTY=$(tty);
 
 # Pointer to the dotfiles repo
 export DOTFILES_LOCATION="${HOME}/code/dotfiles"
+
+export NVM_DIR="${HOME}/.nvm"
