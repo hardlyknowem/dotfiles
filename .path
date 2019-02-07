@@ -17,4 +17,8 @@ if [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
 	PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 fi
 
+if [ -d "/Library/PostgreSQL/9.4/bin" ]; then
+    PATH="/Library/PostgreSQL/9.4/bin:${PATH}"
+fi
+
 export PATH
