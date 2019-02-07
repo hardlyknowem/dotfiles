@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Shell functions and code used for Rustici Software development.
+function update-lxp-dev-tools {
+    update-repo https://github.com/RusticiSoftware/lxp-dev-tools.git
+    CONFIG_LOCATION="${HOME}/code/lxp-dev-tools/lxp_control.yaml"
+    rm -f "${CONFIG_LOCATION}"
+    ln -s "${HOME}/init/lxp_control.yaml" "${CONFIG_LOCATION}"
+}
+
+if [ -f "${HOME}/code/lxp-dev-tools/lxp_shell.sh" ]; then
+    source "${HOME}/code/lxp-dev-tools/lxp_shell.sh"
+fi
