@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Shell functions and code used for Instilled development.
+alias update-kzo-dev-tools='update-repo https://github.com/KZO/kzo-dev-tools.git'
+
+if [ -f "${HOME}/code/kzo-dev-tools/kzo_shell.sh" ]; then
+    source "${HOME}/code/kzo-dev-tools/kzo_shell.sh"
+fi
