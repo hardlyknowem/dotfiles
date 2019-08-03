@@ -21,4 +21,8 @@ if [ -d "/Library/PostgreSQL/9.4/bin" ]; then
     PATH="/Library/PostgreSQL/9.4/bin:${PATH}"
 fi
 
+if command -v pyenv > /dev/null 2>&1; then
+    PATH="${HOME}/.pyenv:${PATH}"
+fi
+
 export PATH

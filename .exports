@@ -39,3 +39,5 @@ export DOTFILES_LOCATION="${HOME}/code/dotfiles"
 export NVM_DIR="${HOME}/.nvm"
 
 export SDKMAN_DIR="${HOME}/.sdkman"
+
+export PYENV_ROOT="${HOME}/.pyenv"
