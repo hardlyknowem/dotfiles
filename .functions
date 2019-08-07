@@ -178,7 +178,6 @@ function gff {
     fi;
     git fetch "${target}"
     git merge --ff-only "${target}/$(mybranch)"
-    git push -u origin "$(mybranch)"
 }
 
 # Push the current branch to origin
