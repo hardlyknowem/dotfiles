@@ -148,11 +148,10 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 #alias path='echo -e ${PATH//:/\\n}'
 
-# Edit the dotfiles repo
-alias dotfiles="${EDITOR} '${DOTFILES_LOCATION}'"
-
-# Re-run the dotfiles initialization
-alias renew_dotfiles="source '${DOTFILES_LOCATION}/bootstrap.sh'"
+# dotfiles, edit dotfiles, renew dotfiles
+alias df="cd ${DOTFILES_LOCATION}"
+alias edf="{$EDITOR} '${DOTFILES_LOCATION}'"
+alias rdf="source '${DOTFILES_LOCATION}/bootstrap.sh'"
 
 # Remove Windows/DOS line endings from a file.
 alias undosify="tr -d '\015'"
