@@ -149,7 +149,7 @@ alias reload="exec ${SHELL} -l"
 #alias path='echo -e ${PATH//:/\\n}'
 
 # Edit the dotfiles repo
-alias dotfiles="subl '${DOTFILES_LOCATION}'"
+alias dotfiles="${EDITOR} '${DOTFILES_LOCATION}'"
 
 # Re-run the dotfiles initialization
 alias renew_dotfiles="source '${DOTFILES_LOCATION}/bootstrap.sh'"
