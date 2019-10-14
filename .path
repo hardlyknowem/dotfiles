@@ -25,4 +25,8 @@ if command -v pyenv > /dev/null 2>&1; then
     PATH="${HOME}/.pyenv:${PATH}"
 fi
 
+if [ -d "/usr/local/arcanist/arcanist/bin" ]; then
+    PATH="${PATH}:/usr/local/arcanist/arcanist/bin"
+fi
+
 export PATH
