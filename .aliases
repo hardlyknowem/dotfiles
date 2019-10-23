@@ -150,7 +150,7 @@ alias reload="exec ${SHELL} -l"
 
 # dotfiles, edit dotfiles, renew dotfiles
 alias df="cd ${DOTFILES_LOCATION}"
-alias edf="{$EDITOR} '${DOTFILES_LOCATION}'"
+alias edf="code '${DOTFILES_LOCATION}'"
 alias rdf="source '${DOTFILES_LOCATION}/bootstrap.sh'"
 
 # Remove Windows/DOS line endings from a file.
