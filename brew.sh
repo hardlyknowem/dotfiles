@@ -86,3 +86,5 @@ brew install zopfli
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+brew cask install spotmenu
