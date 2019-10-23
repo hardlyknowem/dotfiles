@@ -5,3 +5,5 @@
 --ignore-dir=.sass-cache
 --ignore-dir=.tmp
 --ignore-file=ext:orig
+--ignore-dir=.tox
+--ignore-dir=build
