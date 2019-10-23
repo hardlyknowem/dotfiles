@@ -44,6 +44,7 @@ brew install gnupg
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install grep
+brew install openssl
 brew install openssh
 brew install screen
 brew install php
@@ -65,6 +66,7 @@ brew install gs
 brew install imagemagick --with-webp
 brew install lua
 brew install lynx
+brew install mysql-connector-c # for Ikos work
 brew install node
 brew install p7zip
 brew install pigz
