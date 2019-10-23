@@ -21,8 +21,4 @@ if [ -d "/Library/PostgreSQL/9.4/bin" ]; then
     PATH="/Library/PostgreSQL/9.4/bin:${PATH}"
 fi
 
-if [ -d "/usr/local/arcanist/arcanist/bin" ]; then
-    PATH="${PATH}:/usr/local/arcanist/arcanist/bin"
-fi
-
 export PATH

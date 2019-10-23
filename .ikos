@@ -1,0 +1,68 @@
+# See https://ikoshq.phacility.com/w/py3-setup/
+export LDFLAGS="-L$(brew --prefix openssl)/lib"
+export CFLAGS="-I$(brew --prefix openssl)/lib"
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+
+if [ -d "/usr/local/arcanist/arcanist/bin" ]; then
+    PATH="${PATH}:/usr/local/arcanist/arcanist/bin"
+fi
+arc set-config editor "\"${HOME}/bin/subl\" -w -n"
+
+export WORKON_HOME=~/VENVS
+source $HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+export PATH="${PATH}:$HOME/Library/Python/2.7/bin"
+mkdir -p $WORKON_HOME
+
+IKOS_HOME="${HOME}/ikos"
+
+function ks () {
+    if [ $# -eq 0 ]; then
+        cd "${IKOS_HOME}";
+        return 0;
+    fi
+
+    subcommand=$1;
+    shift;
+    if [ $# -ne 0 ]; then
+        >&2 echo "subarguments are not supported"
+        return 2
+    fi
+
+    case $subcommand in
+    "dal")
+        cd "${IKOS_HOME}/software/ikosdal"
+        ;;
+    "mysql")
+        docker exec -it localdev-mysql mysql -u root -ppassword ikosdev
+        ;;
+    "ops")
+        cd "${IKOS_HOME}/ops"
+        ;;
+    "py2")
+        ks software
+        ./run_dev.sh
+        ;;
+    "py3")
+        ks software
+        ./py3-dev.sh
+        ;;
+    "software")
+        cd "${IKOS_HOME}/software"
+        ;;
+    esac
+}
+
+alias ksd="ks dal"
+alias ksm="ks mysql"
+alias kso="ks ops"
+alias ks2="ks py2"
+alias ks3="ks py3"
+alias kss="ks software"
+
+function ops_rsync () {
+    for host in staging app1 app2 app3 job1 job2 job3; do
+        rsync -auv ./ansible/* $host.meetikos.com:/opt/Operations/ansible/;
+    done;
+}
