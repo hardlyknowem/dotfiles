@@ -91,7 +91,7 @@
 	attributesfile = ~/.gitattributes
 
 	# Use VSCode as the Editor
-	editor = code --wait --new-window
+	editor = ~/bin/subl --wait --new-window
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
