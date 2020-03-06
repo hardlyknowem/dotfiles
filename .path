@@ -25,4 +25,8 @@ if [ -d "$HOME/.poetry/bin" ]; then
     PATH="$HOME/.poetry/bin:${PATH}"
 fi
 
+if [ -d "$(brew --prefix mysql-client)/bin" ]; then
+    PATH="$PATH:$(brew --prefix mysql-client)/bin:"
+fi
+
 export PATH
