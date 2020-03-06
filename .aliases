@@ -160,6 +160,7 @@ alias undosify="tr -d '\015'"
 alias f="findit.sh"
 
 alias c='code'
+alias c.='code .'
 alias gcom='git checkout master'
 alias gb='git branch'
 alias gbd='git branch -d'
