@@ -1,9 +1,17 @@
+export IKOS_HOME="${HOME}/ikos"
+export IKOS_SOFTWARE="${IKOS_HOME}/software"
+if [ -f "${IKOS_SOFTWARE}/.ikos_profile" ]; then
+    source "${IKOS_SOFTWARE}/.ikos_profile"
+fi
+
 # See https://ikoshq.phacility.com/w/py3-setup/
 export LDFLAGS="-L$(brew --prefix openssl)/lib"
 export CFLAGS="-I$(brew --prefix openssl)/lib"
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+
+export IKOS_SKIP_PYENV_INIT="true"
 
 if [ -d "/usr/local/arcanist/arcanist/bin" ]; then
     PATH="${PATH}:/usr/local/arcanist/arcanist/bin"
