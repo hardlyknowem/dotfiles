@@ -21,4 +21,8 @@ if [ -d "/Library/PostgreSQL/9.4/bin" ]; then
     PATH="/Library/PostgreSQL/9.4/bin:${PATH}"
 fi
 
+if [ -d "$HOME/.poetry/bin" ]; then
+    PATH="$HOME/.poetry/bin:${PATH}"
+fi
+
 export PATH
