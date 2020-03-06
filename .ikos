@@ -15,8 +15,8 @@ export IKOS_SKIP_PYENV_INIT="true"
 
 if [ -d "/usr/local/arcanist/arcanist/bin" ]; then
     PATH="${PATH}:/usr/local/arcanist/arcanist/bin"
+    arc set-config editor "\"${HOME}/bin/subl\" -w -n" > /dev/null
 fi
-arc set-config editor "\"${HOME}/bin/subl\" -w -n"
 
 export WORKON_HOME=~/VENVS
 source $HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
