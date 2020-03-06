@@ -1,0 +1,55 @@
+Host *
+  ForwardAgent yes
+  TCPKeepAlive no
+  UserKnownHostsFile ~/.ssh/known_hosts
+
+Host scraper.meetikos.com
+  Hostname 18.212.69.39
+  User ec2-user
+
+Host staging.meetikos.com
+  User ec2-user
+
+Host monitoring.meetikos.com
+  User ec2-user
+
+Host workflow.meetikos.com
+  User ec2-user
+
+Host app1.meetikos.com
+  User ec2-user
+
+Host app2.meetikos.com
+  User ec2-user
+
+Host app3.meetikos.com
+  User ec2-user
+
+Host job1.meetikos.com
+  User ec2-user
+
+Host job2.meetikos.com
+  User ec2-user
+
+Host job3.meetikos.com
+  User ec2-user
+
+Host product-ci-1
+  Hostname ec2-18-220-127-250.us-east-2.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/.ssh/cibot-id_rsa
+
+Host product-ci-2
+  Hostname ec2-18-191-86-113.us-east-2.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/.ssh/cibot-id_rsa
+
+Host product-ci-3
+  Hostname ec2-18-191-64-121.us-east-2.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/.ssh/useast2-ikos-id_rsa
+
+Host platform-ci-1
+  Hostname ec2-13-58-83-73.us-east-2.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/.ssh/useast2-ikos-id_rsa
