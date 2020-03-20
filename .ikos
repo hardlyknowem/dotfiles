@@ -206,7 +206,7 @@ function ks () {
 }
 
 
-alias ksack='ack --ignore-dir=tests --ignore-dir=legacy'
+alias ksack='ack --ignore-dir=tests --ignore-dir=legacy --ignore-file=is:seed.sql'
 
 # TODO: Autogenerate ksab, ksac, ksas, ksad, etc. etc. etc.
 alias ksa='ks api'
