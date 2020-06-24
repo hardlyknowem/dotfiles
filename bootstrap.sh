@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 pushd "$(dirname "${BASH_SOURCE}")" > /dev/null;
 
-git pull origin master;
+git pull origin main;
 
 function doIt() {
 	rsync --exclude ".git/" \
