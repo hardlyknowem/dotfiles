@@ -1,0 +1,51 @@
+MARKUP_HOME="${HOME}/code/chicago";
+
+function ch () {
+    if [ $# -eq 0 ]; then
+        cd "${MARKUP_HOME}";
+        return 0;
+    fi
+
+    if [ $# -ne 1 ]; then
+        >&2 echo "usage: ch <command>";
+        return 2;
+    fi
+
+    subcommand=$1;
+    shift;
+
+    case $subcommand in
+    "backup")
+        (ch && make dump_pg)
+        return $?
+        ;;
+    "code")
+        code "${MARKUP_HOME}/std.code-workspace";
+        return $?
+        ;;
+    "down")
+        (ch && make stop)
+        return $?
+        ;;
+    "psql")
+        psql -h localhost -p 5432 -U chicago
+        return $?
+        ;;
+    "restore")
+        (ch && make restore_pg)
+        return $?
+        ;;
+    "up")
+        (ch && make)
+        return $?
+        ;;
+    *)
+        >&2 echo "unrecognized command $1";
+        return 2
+        ;;
+    esac
+}
+
+alias chc='ch code'
+alias chp='ch psql'
+alias chup='ch up'
